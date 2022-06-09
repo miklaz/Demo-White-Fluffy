@@ -101,17 +101,6 @@ extension PhotosCollectionVC {
         present(photoDetailVC, animated: true, completion: nil)
     }
     
-    private func createShareController() {
-        let shareController = UIActivityViewController(activityItems: selectedImages, applicationActivities: nil)
-        shareController.completionWithItemsHandler = { _, bool, _, _ in
-            if bool {
-                self.refresh()
-            }
-        }
-        shareController.popoverPresentationController?.permittedArrowDirections = .any
-        present(shareController, animated: true, completion: nil)
-    }
-    
 // MARK: - BarButton actions
     @objc private func addBarButtonTapped() {
         print(#function)
